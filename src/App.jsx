@@ -8,16 +8,11 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import RegisterHours from './pages/RegisterHours/RegisterHours';
 import RegisterSocialService from './pages/RegisterSocialService/RegisterSocialService';
-/*
-import HoursApproval from './pages/HoursApproval/HoursApproval';
-import Admin from './pages/Admin/Admin';
-import NotFound from './pages/NotFound/NotFound';
-*/
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import Loading from './components/Loading/Loading';
 import { useAuth } from './Context/AuthContext';
 import './assets/styles/base.css';
-import './app.css';
+import './App.css';
 
 export default function App() {
   const { user, loading } = useAuth();
