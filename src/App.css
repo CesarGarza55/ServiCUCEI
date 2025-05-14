@@ -1,0 +1,13 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.app-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

@@ -1,0 +1,250 @@
+.dashboard-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  min-height: 60vh;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-header p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.dashboard-card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-card.primary {
+  border-top: 4px solid #3498db;
+}
+
+.dashboard-card.secondary {
+  border-top: 4px solid #2ecc71;
+}
+
+.dashboard-card.accent {
+  border-top: 4px solid #e74c3c;
+}
+
+/* Añade esto a tu CSS */
+.dashboard-card.approval-list {
+  border-top: 4px solid #f39c12;
+}
+
+.approval-list ul {
+  list-style-type: none;
+  padding: 0;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.approval-list li {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 5px;
+  border-left: 3px solid #f39c12;
+}
+
+.approval-list li:last-child {
+  margin-bottom: 0;
+}
+
+.approval-list button {
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.approval-list button:first-of-type {
+  background: #2ecc71;
+  color: white;
+}
+
+.approval-list button:last-of-type {
+  background: #e74c3c;
+  color: white;
+}
+
+.approval-list button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Añade clases para los diferentes estados */
+.hour-status-approved {
+  color: #2ecc71;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.hour-status-approved::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #2ecc71;
+}
+
+.hour-status-rejected {
+  color: #e74c3c;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.hour-status-rejected::before {
+  content: "✗";
+  position: absolute;
+  left: 0;
+  color: #e74c3c;
+}
+
+.hour-status-pending {
+  color: #f39c12;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.hour-status-pending::before {
+  content: "…";
+  position: absolute;
+  left: 0;
+  color: #f39c12;
+}
+
+.hours-progress {
+  height: 8px;
+  background: #ecf0f1;
+  border-radius: 4px;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.hours-progress-bar {
+  height: 100%;
+  background: #3498db;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.dashboard-card h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.stat {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: #2c3e50;
+}
+
+.activity-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.activity-list li {
+  padding: 0.75rem 0 0.75rem 1rem;
+  margin: 0.25rem 0;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.activity-list li:last-child {
+  border-bottom: none;
+}
+
+.loading-message, .error-message {
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.loading-message {
+  background: #f8f9fa;
+  color: #3498db;
+  border: 1px solid #3498db;
+}
+
+.error-message {
+  background: #fdecea;
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+}
+
+.download-certificate {
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  margin: 1.5rem auto 0;
+  padding: 0.75rem;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.download-certificate:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.download-certificate:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 0 1rem;
+  }
+  
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 2rem;
+  }
+  
+  .stat {
+    font-size: 2.5rem;
+  }
+}
