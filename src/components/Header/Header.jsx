@@ -53,10 +53,10 @@ export default function Header() {
           <span className="logo-text">ServiCUCEI</span>
         </Link>
         
+        <nav className={`main-nav${navOpen ? ' open' : ''}`}>
         <button className="menu-toggle" onClick={handleToggle} aria-label="Abrir menú">
           ☰
         </button>
-        <nav className={`main-nav${navOpen ? ' open' : ''}`}>
           {user ? (
             <>
               <button className="close-menu" onClick={handleClose} aria-label="Cerrar menú">
