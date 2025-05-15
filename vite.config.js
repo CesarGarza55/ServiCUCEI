@@ -23,7 +23,7 @@ export default defineConfig({
             sizes: '512x512',
           },
         ],
-        start_url: '/chatbot',
+        start_url: '/',
         display: 'standalone',
         background_color: '#ffffff',
         theme_color: '#3b82f6',
