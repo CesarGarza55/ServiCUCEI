@@ -9,14 +9,6 @@ export default function Home() {
   const { user, loading } = useAuth();
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
-  useEffect(() => {
-    // Cargar particles.js solo en el cliente
-    if (typeof window !== 'undefined') {
-      import('particles.js').then(({ default: particlesJS }) => {
-        particlesJS('particles-js', particlesConfig);
-      });
-    }
-  }, []);
 
   useEffect(() => {
     if (inView) {
@@ -73,7 +65,7 @@ export default function Home() {
             variants={containerVariants}
           >
             <motion.h1 variants={itemVariants}>
-              Transforma tu <span className="brand-gradient">Servicio Social</span>
+              Servi<span className="brand-gradient">CUCEI</span>
             </motion.h1>
             <motion.p variants={itemVariants} className="hero-subtitle">
               La plataforma definitiva para gestionar tus horas de servicio social en CUCEI.

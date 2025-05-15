@@ -231,6 +231,14 @@
   transform: translateY(0);
 }
 
+.circular-progress {
+  display: block;
+  margin: 0 auto;
+}
+.circular-progress text {
+  dominant-baseline: middle;
+}
+
 @media (max-width: 768px) {
   .dashboard-container {
     padding: 0 1rem;

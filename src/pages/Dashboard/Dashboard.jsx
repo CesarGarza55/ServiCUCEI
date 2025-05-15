@@ -366,6 +366,49 @@ export default function Dashboard() {
     }
   };
 
+  function CircularProgress({ value, max = 480, size = 120, stroke = 10 }) {
+    const radius = (size - stroke) / 2;
+    const circumference = 2 * Math.PI * radius;
+    const progress = Math.min(value / max, 1);
+    const offset = circumference * (1 - progress);
+
+    return (
+      <svg width={size} height={size} className="circular-progress">
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          stroke="#ecf0f1"
+          strokeWidth={stroke}
+          fill="none"
+        />
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          stroke="#3498db"
+          strokeWidth={stroke}
+          fill="none"
+          strokeDasharray={circumference}
+          strokeDashoffset={offset}
+          strokeLinecap="round"
+          style={{ transition: 'stroke-dashoffset 0.5s' }}
+        />
+        <text
+          x="50%"
+          y="50%"
+          textAnchor="middle"
+          dy="0.3em"
+          fontSize="2rem"
+          fill="#2c3e50"
+          fontWeight="bold"
+        >
+          {Math.floor(value)}h
+        </text>
+      </svg>
+    );
+  }
+
   return (
     <div className="dashboard-container">
       <div className="dashboard-header">
@@ -380,14 +423,10 @@ export default function Dashboard() {
         {user?.role === 'student' && enrollment && (
           <div className="dashboard-card primary">
             <h3>Horas Registradas</h3>
-            <p className="stat">{enrollment.total_hours}</p>
-            <div className="hours-progress">
-              <div 
-                className="hours-progress-bar" 
-                style={{ width: `${Math.min(100, (enrollment.total_hours / 480) * 100)}%` }}
-              ></div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <CircularProgress value={enrollment.total_hours} max={480} />
+              <p style={{ marginTop: '1rem' }}>de 480 horas requeridas</p>
             </div>
-            <p>de 480 horas requeridas</p>
             {enrollment.total_hours >= 480 && (
               <button 
                 className="download-certificate"
