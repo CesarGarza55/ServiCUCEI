@@ -33,10 +33,7 @@ export default function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/register-hours" element={<RegisterHours />} />
-            <Route path="/register-service" element={<RegisterSocialService />} />
-            {/* <Route path="/hours-approval" element={<HoursApproval />} /> */}
-            {/* <Route path="/admin" element={<Admin />} /> */}
-            {/* <Route path="*" element={<NotFound />} /> */}            
+            <Route path="/register-service" element={<RegisterSocialService />} />   
           </Routes>
         </main>
         <Footer />
