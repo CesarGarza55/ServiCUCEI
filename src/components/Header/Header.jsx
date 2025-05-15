@@ -76,6 +76,11 @@ export default function Header() {
             </>
           ) : (
             <>
+              {deferredPrompt && (
+                <button onClick={handleInstallClick} className="install-button">
+                  Instalar app
+                </button>
+              )}
               <Link to="/login" className="nav-link" onClick={handleClose}>Iniciar sesión</Link>
               <Link to="/register" className="nav-link" onClick={handleClose}>Registrarse</Link>
             </>
