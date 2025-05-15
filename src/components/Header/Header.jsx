@@ -76,13 +76,13 @@ export default function Header() {
             </>
           ) : (
             <>
+              <Link to="/login" className="nav-link" onClick={handleClose}>Iniciar sesión</Link>
+              <Link to="/register" className="nav-link" onClick={handleClose}>Registrarse</Link>
               {deferredPrompt && (
                 <button onClick={handleInstallClick} className="install-button">
                   Instalar app
                 </button>
               )}
-              <Link to="/login" className="nav-link" onClick={handleClose}>Iniciar sesión</Link>
-              <Link to="/register" className="nav-link" onClick={handleClose}>Registrarse</Link>
             </>
           )}
         </nav>
